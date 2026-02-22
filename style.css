@@ -1,0 +1,247 @@
+/* ===============================
+   ROOT VARIABLES
+================================= */
+
+:root {
+  --primary: #065A82;
+  --accent: #27C7D7;
+  --text: #1E2D3D;
+  --bg: #F0F7FA;
+  --white: #ffffff;
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* ===============================
+   GLOBAL STYLES
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ===============================
+   HEADER
+================================= */
+
+header {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+
+#hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--primary);
+  color: var(--white);
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 1.5rem;
+  border: 4px solid var(--white);
+}
+
+/* ===============================
+   SECTIONS
+================================= */
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* ===============================
+   SKILLS
+================================= */
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* ===============================
+   PROJECT GRID
+================================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ===============================
+   CARD
+================================= */
+
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.card a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   CONTACT FORM
+================================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--accent);
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+}
